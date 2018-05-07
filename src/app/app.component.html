@@ -6,8 +6,14 @@
       <input type="text"
              name="fname"
              class="form-control"
-             ngModel>
+             ngModel
+             required
+             #fname="ngModel"
+             placeholder="Enter Name">
     </div>
+    <div [hidden]="fname.valid" class="alert alert-danger">
+      ***Can't Left Blank***
+  </div>
 
     <!--Last Name-->
     <div class="form-group">
@@ -58,7 +64,7 @@
                value="male"
                ngModel>Male
         <input type="radio"
-               name-="sex"
+               name="sex"
                class="form-control"
                value="female"
                ngModel>Female
